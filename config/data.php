@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "home" => 42
+    "casa" => 42
 ];
