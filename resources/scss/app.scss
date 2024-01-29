@@ -159,4 +159,12 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+
+    .elimina {
+        background-color: red;
+    }
+
+    .submit {
+        background-color: green;
+    }
 }
