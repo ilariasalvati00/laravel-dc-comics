@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 
+use Carbon\Carbon;
+
 
 
 class ComicsController extends Controller
@@ -31,7 +33,21 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dati = $request->all();
+
+        $nuovo_elemento = new Comic();
+        $nuovo_elemento->title=$dati["titolo"];
+        $nuovo_elemento->description = $dati["descrizione"];
+        $nuovo_elemento->thumb = $dati["copertina"];
+        $nuovo_elemento->price = floatval($dati["prezzo"]);
+        $nuovo_elemento->series = $dati["serie"];
+        $nuovo_elemento->sale_date = Carbon::parse($dati["data_uscita"]);
+        $nuovo_elemento->type = $dati["tipo"];
+
+        $nuovo_elemento->save();
+
+        //return redirect()->route('comics.show', $nuovo_elemento->id);
+        return redirect()->route("comics.index");   
     }
 
     /**
