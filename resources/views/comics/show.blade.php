@@ -17,6 +17,10 @@
                     <span>Prezzo: ${{$detail->price}}</span>
                 </div>
             </div>
+            <form action="{{route("comics.edit", $detail->id)}}" method="GET" class="form">
+                @csrf
+                <button type="submit">Modifica fumetto</button>
+            </form>
         </div>
    </div>
 @endsection

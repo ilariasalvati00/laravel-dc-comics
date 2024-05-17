@@ -7,10 +7,10 @@
 @section('contenuto')
     <div class="p-container">
         @foreach ($comics as $fumetto)
-            <div class="fumetto">
-                <div class="immagine" style="background-image : url( {{ $fumetto['thumb'] }} )"></div>
+            <a class="fumetto" href={{route("comics.show", $fumetto->id)}}>
+                <div class="immagine" style="background-image : url('{{ $fumetto['thumb'] }}')"></div>
                 <p>{{ $fumetto['title'] }}</p>
-            </div>
+            </a>
         @endforeach
     </div>
 @endsection

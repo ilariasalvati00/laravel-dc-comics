@@ -4,9 +4,9 @@
             <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
         </div>
         <div class="a-container">
-            <a href="">HOME</a>
+            <a href={{route("comics.index")}}>HOME</a>
             <a href="">CHARACTERS</a>
-            <a href="">COMICS</a>
+            <a href={{route("comics.index")}}>COMICS</a>
             <a href="">MOVIES</a>
             <a href="">TV</a>
             <a href="">GAMES</a>
